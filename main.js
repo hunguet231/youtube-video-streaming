@@ -8,7 +8,7 @@ ytdl.getInfo('KbIjug1Ijio').then((res) => {
   // );
   const dashManifestUrl = res.player_response.streamingData.dashManifestUrl;
   const file = fs.createWriteStream('manifest.mpd');
-  const request = https.get(dashManifestUrl, function (response) {
+  https.get(dashManifestUrl, function (response) {
     response.pipe(file);
     file.on('finish', () => {
       file.close();
