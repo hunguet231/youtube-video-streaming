@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Youtube video streaming</title>
+    <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Youtube video streaming</title>
-  <script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
-  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="container">
+      <video id="videoPlayer" crossorigin playsinline controls></video>
+      <video
+        controls
+        width="640"
+        height="320"
+        src="https://rr5---sn-i3b7knsd.googlevideo.com/videoplayback?expire=1687202390&ei=9lWQZM66FveGs8IP_qyG0AM&ip=104.28.222.73&id=o-ADyVeZJ8SGX4yhJMHmm8DtLZ8KBbtpUSiJ_6R5GC2MK1&itag=22&source=youtube&requiressl=yes&mh=4g&mm=31%2C26&mn=sn-i3b7knsd%2Csn-npoeenek&ms=au%2Conr&mv=m&mvi=5&pl=24&initcwndbps=842500&spc=qEK7ByZ8PHBr9ieMYcdrPK885MQ6acdHmT_Mz3-u0Q&vprv=1&svpuc=1&mime=video%2Fmp4&ns=I-Y3H1dNjviNQet257b0wsIN&cnr=14&ratebypass=yes&dur=4092.308&lmt=1632306863525335&mt=1687180407&fvip=2&fexp=24007246%2C51000012&c=WEB&txp=6211224&n=eurFb4FPNZ5JMg&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Cns%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRQIgNAPCBty2p9hlTn8xCDhGP1kKkxJr2iTUemy-h5LEtzgCIQDU670udI4hmOAix0_CkL5uIG4pR6-Q8nqbGOTOc_gddQ%3D%3D&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRAIgXVXmrNk-GRR8oWCLT4FWJWF_953CKX-zzcJCKvMXSXMCIBu7RTW-EM75aKG45keC7L7yST1iPAJuaPlRo8mw0qbO"
+      ></video>
+      <noscript>
+        <p>
+          To view this video please enable JavaScript, and consider upgrading to
+          a web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank">
+            supports HTML5 video
+          </a>
+        </p>
+      </noscript>
+    </div>
 
-<body>
-  <div class="container">
-    <video id="videoPlayer" crossorigin playsinline controls></video>
-    <noscript>
-      <p>
-        To view this video please enable JavaScript, and consider upgrading to a
-        web browser that
-        <a href="https://videojs.com/html5-video-support/" target="_blank">
-          supports HTML5 video
-        </a>
-      </p>
-    </noscript>
-  </div>
-
-  <script src="./plyr.js"></script>
-</body>
-
+    <script src="./plyr.js"></script>
+  </body>
 </html>

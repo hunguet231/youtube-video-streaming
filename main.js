@@ -3,10 +3,11 @@ const https = require('https'); // or 'https' for https:// URLs
 const fs = require('fs');
 
 ytdl.getInfo('KbIjug1Ijio').then((res) => {
-  // console.log(
-  //   res.formats.filter((format) => format.videoCodec && format.audioCodec)[0]
-  // );
+  console.log(
+    res.formats.filter((format) => format.videoCodec && format.audioCodec)[0]
+  );
   const dashManifestUrl = res.player_response.streamingData.dashManifestUrl;
+  // console.log(dashManifestUrl);
   const file = fs.createWriteStream('manifest.mpd');
   https.get(dashManifestUrl, function (response) {
     response.pipe(file);
