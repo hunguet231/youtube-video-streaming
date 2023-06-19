@@ -1,22 +1,52 @@
 const ytdl = require('ytdl-core');
+const https = require('https'); // or 'https' for https:// URLs
+const fs = require('fs');
 
 ytdl.getInfo('KbIjug1Ijio').then((res) => {
   // console.log(
   //   res.formats.filter((format) => format.videoCodec && format.audioCodec)[0]
   // );
-  console.log(res.player_response.streamingData);
+  const dashManifestUrl = res.player_response.streamingData.dashManifestUrl;
+  const file = fs.createWriteStream('manifest.mpd');
+  const request = https.get(dashManifestUrl, function (response) {
+    response.pipe(file);
+    file.on('finish', () => {
+      file.close();
+      console.log('Download Completed');
+    });
+  });
 });
 
-// var options = {};
+// document.addEventListener('DOMContentLoaded', () => {
+//   const player = videojs('videoPlayer', {
+//     plugins: {
+//       settingsMenu: {
+//         items: [
+//           'AudioTrackButton',
+//           'PlaybackRateMenuButton',
+//           'RatesButton',
+//         ],
+//         languages: {
+//           settings: 'Settings',
+//           loading: 'Loading',
+//           back: 'Back',
+//           audio: 'Audio',
+//           speed: 'Speed',
+//           quality: 'Quality',
+//         },
+//       },
+//     },
+//     crossOrigin: 'anonymous',
+//     liveui: true,
+//     autoplay: true,
+//     playbackRates: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
+//     nativeControlsForTouch: false,
+//   });
 
-// var player = videojs('video-player', options, function onPlayerReady() {
-//   videojs.log('Your player is ready!');
-
-//   // In this context, `this` is the player that was created by Video.js.
-//   this.play();
-
-//   // How about an event listener?
-//   this.on('ended', function () {
-//     videojs.log('Awww...over so soon?!');
+//   player.ready(function () {
+//     player.src({
+//       src: './manifest.mpd',
+//       type: 'application/dash+xml',
+//     });
 //   });
 // });
