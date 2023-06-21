@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video streaming</title>
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-hls@5.15.0/dist/videojs-contrib-hls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.21.1/video.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/@samueleastdev/videojs-settings-menu@0.0.9/dist/videojs-settings-menu.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@samueleastdev/videojs-settings-menu@0.0.9/dist/videojs-settings-menu.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <video id="videoPlayer" class="video-js vjs-default-skin" controls>
+        </video>
+        <noscript>
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a
+                web browser that
+                <a href="https://videojs.com/html5-video-support/" target="_blank">
+                    supports HTML5 video
+                </a>
+            </p>
+        </noscript>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
